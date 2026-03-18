@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>บารมี 10 ทัศ — ทศบารมี | Dasa Pāramī</title>
+  <meta name="description" content="บารมี 10 ทัศ (ทศบารมี) — คุณธรรมอันประเสริฐ 10 ประการในพระพุทธศาสนาเถรวาท พร้อมทศชาติชาดกและหลักปฏิบัติ">
+  <style>
+    :root {
+      --gold: #d4a853;
+      --gold-light: #f5e6c8;
+      --dark: #1a1a2e;
+      --darker: #0f0f1a;
+      --text: #e8e8e8;
+      --text-muted: #a0a0b0;
+      --card-bg: #1e1e35;
+      --border: #2a2a45;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+      background: var(--darker);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+      background: linear-gradient(180deg, var(--dark) 0%, var(--darker) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .hero .subtitle {
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .hero .etymology {
+      margin-top: 24px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .etymology strong { color: var(--gold-light); }
+
+    /* Intro */
+    .intro {
+      padding: 48px 0;
+      text-align: center;
+    }
+    .intro p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 16px;
+      color: var(--text-muted);
+    }
+    .intro blockquote {
+      border-left: 3px solid var(--gold);
+      padding-left: 16px;
+      margin: 24px auto;
+      max-width: 600px;
+      font-style: italic;
+      color: var(--gold-light);
+      text-align: left;
+    }
+
+    /* Parami Cards */
+    .parami-section { padding: 32px 0; }
+
+    .parami-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      transition: border-color 0.3s;
+    }
+    .parami-card:hover { border-color: var(--gold); }
+
+    .parami-card .number {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: var(--gold);
+      color: var(--darker);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .parami-card h2 {
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .parami-card .pali {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .parami-card .meaning {
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+    .parami-card .detail-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-top: 16px;
+      margin-bottom: 6px;
+    }
+    .parami-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .parami-card ul li {
+      padding: 4px 0 4px 20px;
+      position: relative;
+      color: var(--text-muted);
+    }
+    .parami-card ul li::before {
+      content: '·';
+      position: absolute;
+      left: 6px;
+      color: var(--gold);
+      font-weight: bold;
+    }
+    .parami-card .jataka {
+      background: rgba(212, 168, 83, 0.08);
+      border-left: 3px solid var(--gold);
+      padding: 12px 16px;
+      margin-top: 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+    }
+    .parami-card .jataka strong { color: var(--gold-light); }
+    .parami-card .practice {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Levels Section */
+    .levels {
+      padding: 48px 0;
+      text-align: center;
+    }
+    .levels h2 {
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .level-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .level-card h3 { color: var(--gold); margin-bottom: 8px; }
+    .level-card .pali-name { font-size: 0.85rem; color: var(--text-muted); }
+    .level-card p { margin-top: 8px; font-size: 0.95rem; color: var(--text-muted); }
+
+    /* Jataka Table */
+    .jataka-section {
+      padding: 48px 0;
+    }
+    .jataka-section h2 {
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .jataka-section .mnemonic {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+      margin-bottom: 24px;
+      letter-spacing: 4px;
+    }
+    .jataka-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .jataka-table th {
+      background: var(--card-bg);
+      color: var(--gold);
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 2px solid var(--gold);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .jataka-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .jataka-table tr:hover td { color: var(--text); }
+
+    /* Sources */
+    .sources {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+    }
+    .sources h2 {
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .sources ul { list-style: none; padding: 0; }
+    .sources li {
+      padding: 6px 0;
+      font-size: 0.9rem;
+    }
+    .sources a {
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--text-muted);
+    }
+    .sources a:hover { color: var(--gold); border-color: var(--gold); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .parami-card { padding: 20px; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="hero">
+    <h1>บารมี ๑๐ ทัศ</h1>
+    <div class="subtitle">Dasa Pāramī — The Ten Perfections</div>
+    <div class="etymology">
+      <strong>บาลี:</strong> ปารมี (pāramī) — สิ่งที่นำไปถึงฝั่ง<br>
+      <strong>สันสกฤต:</strong> ปารมิตา (pāramitā) — ความเป็นเลิศ<br>
+      <strong>รากศัพท์:</strong> ปรม (parama) — สูงสุด, เป็นเลิศ
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section class="intro">
+      <p>บารมี คือ คุณธรรมที่บำเพ็ญอย่างยิ่งยวด เพื่อข้ามพ้นจากฝั่งแห่งทุกข์ไปสู่ฝั่งแห่งความหลุดพ้น</p>
+      <p>ในพระพุทธศาสนาฝ่ายเถรวาท บารมีมี <strong>10 ประการ</strong> จึงเรียกว่า <strong>ทศบารมี</strong> — คุณธรรมที่พระโพธิสัตว์บำเพ็ญตลอดหลายภพหลายชาติก่อนจะตรัสรู้เป็นพระสัมมาสัมพุทธเจ้า</p>
+      <blockquote>คุณธรรมอันประเสริฐที่เริ่มต้นด้วยทาน ประกอบด้วยกรุณาและอุบายอันฉลาด ปราศจากตัณหา มานะ และมิจฉาทิฏฐิ — อรรถกถา</blockquote>
+    </section>
+
+    <section class="parami-section">
+
+      <!-- 1. ทานบารมี -->
+      <div class="parami-card">
+        <div class="number">๑</div>
+        <h2>ทานบารมี — Dāna Pāramī</h2>
+        <div class="pali">บาลี: dāna | สันสกฤต: dāna | การให้ · Generosity</div>
+        <p class="meaning">การสละสิ่งของ ทรัพย์สิน เวลา หรือความรู้แก่ผู้อื่น ด้วยจิตบริสุทธิ์ ปราศจากความหวังผลตอบแทน เพื่อกำจัดความตระหนี่ออกจากจิตใจ</p>
+        <div class="detail-label">ประเภทของทาน</div>
+        <ul>
+          <li>อามิสทาน — ให้วัตถุสิ่งของ ทรัพย์สิน</li>
+          <li>ธรรมทาน — ให้ความรู้ คำสอน ปัญญา</li>
+          <li>อภัยทาน — ให้อภัย ไม่ถือโทษ ไม่จองเวร</li>
+        </ul>
+        <div class="jataka">
+          <strong>ทศชาติ:</strong> พระเวสสันดร — ทรงบำเพ็ญทานบารมีอย่างสูงสุด สละแม้กระทั่งพระโอรสและพระชายา
+        </div>
+        <p class="practice">หลักปฏิบัติ: ให้ด้วยศรัทธา ให้ด้วยความเคารพ ให้ในเวลาที่เหมาะสม ให้ด้วยจิตอนุเคราะห์</p>
+      </div>
+
+      <!-- 2. ศีลบารมี -->
+      <div class="parami-card">
+        <div class="number">๒</div>
+        <h2>ศีลบารมี — Sīla Pāramī</h2>
+        <div class="pali">บาลี: sīla | สันสกฤต: śīla | ความประพฤติดี · Morality</div>
+        <p class="meaning">การรักษากาย วาจา ใจ ให้บริสุทธิ์ สำรวมในศีล ไม่เบียดเบียนตนเองและผู้อื่น</p>
+        <div class="detail-label">ศีล 3 ระดับ</div>
+        <ul>
+          <li>เหฏฐิมศีล (ชั้นต้น) — ศีล 5, ศีล 8, ศีล 10</li>
+          <li>มัชฌิมศีล (ชั้นกลาง) — ความซื่อตรงทางจิต ไม่อิจฉา ไม่พยาบาท</li>
+          <li>อุปริมศีล (ชั้นสูง) — รวมศีลเข้ากับสมาธิภาวนา</li>
+        </ul>
+        <div class="jataka">
+          <strong>ทศชาติ:</strong> พระภูริทัต — ทรงรักษาศีลอย่างมั่นคง แม้ถูกหมองูจับทรมาน ก็ไม่ละเมิดศีล
+        </div>
+        <p class="practice">หลักปฏิบัติ: รักษาศีล 5 ให้บริสุทธิ์ — ไม่ฆ่า ไม่ลัก ไม่ประพฤติผิดในกาม ไม่พูดเท็จ ไม่ดื่มสุรา</p>
+      </div>
+
+      <!-- 3. เนกขัมมบารมี -->
+      <div class="parami-card">
+        <div class="number">๓</div>
+        <h2>เนกขัมมบารมี — Nekkhamma Pāramī</h2>
+        <div class="pali">บาลี: nekkhamma | สันสกฤต: naiṣkramya | การออกจากกาม · Renunciation</div>
+        <p class="meaning">การสละความยึดมั่นในกามสุข หลีกออกจากสิ่งที่ผูกมัดให้ติดอยู่กับวัฏสงสาร เห็นโทษของกามและมุ่งแสวงหาความสงบภายใน</p>
+        <div class="jataka">
+          <strong>ทศชาติ:</strong> พระเตมีย์ — ทรงแกล้งเป็นใบ้และง่อยเปลี้ยมาตั้งแต่ทรงพระเยาว์ เพื่อหลีกเลี่ยงการครองราชย์ มุ่งออกบวช
+        </div>
+        <p class="practice">หลักปฏิบัติ: ฝึกปล่อยวางสิ่งที่ไม่จำเป็น ลดความโลภ ฝึกสมาธิเพื่อหาความสุขจากภายใน</p>
+      </div>
+
+      <!-- 4. ปัญญาบารมี -->
+      <div class="parami-card">
+        <div class="number">๔</div>
+        <h2>ปัญญาบารมี — Paññā Pāramī</h2>
+        <div class="pali">บาลี: paññā | สันสกฤต: prajñā | ความรอบรู้ · Wisdom</div>
+        <p class="meaning">ความเข้าใจแจ่มแจ้งในสภาวธรรม เห็นสิ่งทั้งหลายตามที่เป็นจริง — อนิจจัง ทุกขัง อนัตตา รู้อริยสัจ 4</p>
+        <div class="detail-label">ปัญญา 3 ระดับ</div>
+        <ul>
+          <li>สุตมยปัญญา — จากการฟัง การอ่าน การเรียนรู้</li>
+          <li>จินตามยปัญญา — จากการคิดพิจารณา ไตร่ตรอง</li>
+          <li>ภาวนามยปัญญา — จากการปฏิบัติ การเจริญสมาธิ</li>
+        </ul>
+        <div class="jataka">
+          <strong>ทศชาติ:</strong> พระมโหสถ — ทรงมีปัญญาเฉียบแหลมตั้งแต่อายุ 7 ขวบ แก้ปัญหาราชการและชนะศัตรูด้วยสติปัญญา
+        </div>
+        <p class="practice">หลักปฏิบัติ: ศึกษาหาความรู้อยู่เสมอ ใคร่ครวญด้วยเหตุผล เจริญวิปัสสนาเพื่อเห็นสัจธรรม</p>
+      </div>
+
+      <!-- 5. วิริยบารมี -->
+      <div class="parami-card">
+        <div class="number">๕</div>
+        <h2>วิริยบารมี — Vīriya Pāramī</h2>
+        <div class="pali">บาลี: viriya | สันสกฤต: vīrya | ความเพียร · Energy</div>
+        <p class="meaning">ความเพียรพยายามอย่างไม่ย่อท้อ มีความกล้าหาญในการปฏิบัติธรรม ไม่ท้อถอยต่ออุปสรรค ดั่งสายพิณที่ต้องตั้งให้ได้ระดับ — ตึงเกินไปจะฟุ้งซ่าน หย่อนเกินไปจะเกียจคร้าน</p>
+        <div class="jataka">
+          <strong>ทศชาติ:</strong> พระมหาชนก — ว่ายน้ำข้ามมหาสมุทร 7 วัน 7 คืน โดยไม่ยอมแพ้ แม้ไม่เห็นฝั่ง
+        </div>
+        <p class="practice">หลักปฏิบัติ: ตั้งเป้าหมายแล้วทำอย่างต่อเนื่อง ไม่ท้อแม้ล้มเหลว ปรับวิธีแต่ไม่ทิ้งเป้าหมาย</p>
+      </div>
+
+      <!-- 6. ขันติบารมี -->
+      <div class="parami-card">
+        <div class="number">๖</div>
+        <h2>ขันติบารมี — Khanti Pāramī</h2>
+        <div class="pali">บาลี: khanti | สันสกฤต: kṣānti | ความอดทน · Patience</div>
+        <p class="meaning">ความอดทน อดกลั้น ไม่หวั่นไหวต่อทั้งสุขและทุกข์ ทั้งคำสรรเสริญและคำนินทา "ขันติ" แปลว่า "ไม่ได้รับผลกระทบ" หรือ "สามารถทนได้"</p>
+        <div class="jataka">
+          <strong>ทศชาติ:</strong> พระจันทกุมาร — ทรงถูกสั่งให้นำไปบูชายัญ แต่ทรงอดทนด้วยเมตตา ไม่โกรธแค้น
+        </div>
+        <p class="practice">หลักปฏิบัติ: อดทนโดยมีปัญญากำกับ ไม่ใช่อดทนอย่างเขลา — เมื่อถูกด่าว่า ถูกเอาเปรียบ เจ็บป่วย ล้วนต้องอดทน</p>
+      </div>
+
+      <!-- 7. สัจจบารมี -->
+      <div class="parami-card">
+        <div class="number">๗</div>
+        <h2>สัจจบารมี — Sacca Pāramī</h2>
+        <div class="pali">บาลี: sacca | สันสกฤต: satya | ความจริง · Truthfulness</div>
+        <p class="meaning">การตั้งมั่นในความจริง พูดจริง ทำจริง ซื่อสัตย์ต่อตนเองและผู้อื่น ไม่ใช่แค่ไม่โกหก แต่รวมถึงไม่บิดเบือน ไม่ปิดบัง ไม่นำพาให้เข้าใจผิด — "ยอมตายแต่ไม่ยอมคด"</p>
+        <div class="jataka">
+          <strong>ทศชาติ:</strong> พระวิธูร — ทรงรักษาสัจจะ ยอมเสี่ยงชีวิตเพื่อรักษาคำพูดที่ให้ไว้
+        </div>
+        <p class="practice">หลักปฏิบัติ: พูดความจริง รักษาสัญญา ทำตามที่พูด ซื่อตรงแม้ในเรื่องเล็กน้อย</p>
+      </div>
+
+      <!-- 8. อธิษฐานบารมี -->
+      <div class="parami-card">
+        <div class="number">๘</div>
+        <h2>อธิษฐานบารมี — Adhiṭṭhāna Pāramī</h2>
+        <div class="pali">บาลี: adhiṭṭhāna | สันสกฤต: adhiṣṭhāna | ความตั้งใจมั่น · Determination</div>
+        <p class="meaning">ความแน่วแน่ในจุดมุ่งหมาย ตั้งปณิธานแล้วไม่เปลี่ยนแปลง มีทิศทางชัดเจนและมุ่งมั่นไปจนสำเร็จ</p>
+        <div class="jataka">
+          <strong>ทศชาติ:</strong> พระเนมิราช — ทรงตั้งอธิษฐานเสด็จไปทั้งสวรรค์และนรก เพื่อให้เห็นผลของกรรมดีกรรมชั่ว แล้วกลับมาสอนประชาชน
+        </div>
+        <p class="practice">หลักปฏิบัติ: ตั้งเป้าหมายที่ชัดเจน ตั้งมั่นไม่คลอนแคลน ไม่เปลี่ยนทิศทางตามกระแส</p>
+      </div>
+
+      <!-- 9. เมตตาบารมี -->
+      <div class="parami-card">
+        <div class="number">๙</div>
+        <h2>เมตตาบารมี — Mettā Pāramī</h2>
+        <div class="pali">บาลี: mettā | สันสกฤต: maitrī | ความรักความปรารถนาดี · Loving-kindness</div>
+        <p class="meaning">ความปรารถนาให้สรรพสัตว์มีความสุข แผ่ไปทั่วทุกทิศโดยไม่จำกัด เป็นยาแก้ความโกรธ ความกลัว และความเห็นแก่ตัว</p>
+        <div class="detail-label">อานิสงส์เมตตา 11 ประการ</div>
+        <ul>
+          <li>หลับเป็นสุข ตื่นเป็นสุข ไม่ฝันร้าย</li>
+          <li>เป็นที่รักของมนุษย์และอมนุษย์</li>
+          <li>เทวดารักษา ไฟ ยาพิษ อาวุธไม่กล้ำกราย</li>
+          <li>จิตตั้งมั่นเร็ว สีหน้าผ่องใส ไม่หลงตาย</li>
+        </ul>
+        <div class="jataka">
+          <strong>ทศชาติ:</strong> พระสุวรรณสาม — ทรงเลี้ยงดูบิดามารดาที่ตาบอดด้วยความเมตตา แม้ถูกลูกศรยิง ก็ไม่โกรธผู้ยิง
+        </div>
+        <p class="practice">หลักปฏิบัติ: แผ่เมตตาทุกวัน เริ่มจากตัวเอง ขยายไปคนรัก คนรู้จัก คนไม่รู้จัก แม้กระทั่งศัตรู</p>
+      </div>
+
+      <!-- 10. อุเบกขาบารมี -->
+      <div class="parami-card">
+        <div class="number">๑๐</div>
+        <h2>อุเบกขาบารมี — Upekkhā Pāramī</h2>
+        <div class="pali">บาลี: upekkhā | สันสกฤต: upekṣā | ความวางเฉย · Equanimity</div>
+        <p class="meaning">ความเป็นกลาง ไม่ลำเอียง ไม่หวั่นไหวไปตามโลกธรรม 8 — ลาภ เสื่อมลาภ ยศ เสื่อมยศ สรรเสริญ นินทา สุข ทุกข์ มองสิ่งต่างๆ อย่างเที่ยงธรรม</p>
+        <div class="jataka">
+          <strong>ทศชาติ:</strong> พระนารทะ (มหาพรหม) — ทรงวางเฉยต่อทั้งสุขและทุกข์ สอนให้เห็นความจริงของกรรมและผลของกรรม
+        </div>
+        <p class="practice">หลักปฏิบัติ: เมื่อถูกชม — ไม่หลงระเริง เมื่อถูกตำหนิ — ไม่ท้อแท้ รักษาใจให้เป็นกลาง ตัดสินด้วยเหตุผล</p>
+      </div>
+
+    </section>
+
+    <!-- ระดับของบารมี -->
+    <section class="levels">
+      <h2>ระดับของบารมี ๓ ชั้น</h2>
+      <p style="color: var(--text-muted)">แต่ละบารมีมี 3 ระดับ รวมเป็น <strong style="color: var(--gold-light)">30 ทัศ</strong></p>
+      <div class="levels-grid">
+        <div class="level-card">
+          <h3>บารมี</h3>
+          <div class="pali-name">Pāramī</div>
+          <p>ระดับสามัญ — ให้ทรัพย์สินสิ่งของ</p>
+        </div>
+        <div class="level-card">
+          <h3>อุปบารมี</h3>
+          <div class="pali-name">Upapāramī</div>
+          <p>ระดับจวนสูงสุด — ให้อวัยวะร่างกาย</p>
+        </div>
+        <div class="level-card">
+          <h3>ปรมัตถบารมี</h3>
+          <div class="pali-name">Paramatthapāramī</div>
+          <p>ระดับสูงสุด — สละแม้ชีวิต</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ทศชาติชาดก -->
+    <section class="jataka-section">
+      <h2>ทศชาติชาดก</h2>
+      <div class="mnemonic">เต · ชะ · สุ · เน · มะ · ภู · จะ · นา · วิ · เว</div>
+      <table class="jataka-table">
+        <thead>
+          <tr>
+            <th>ลำดับ</th>
+            <th>ชาดก</th>
+            <th>บารมี</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>๑</td><td>เตมียชาดก (พระเตมีย์)</td><td>เนกขัมมบารมี</td></tr>
+          <tr><td>๒</td><td>มหาชนกชาดก (พระมหาชนก)</td><td>วิริยบารมี</td></tr>
+          <tr><td>๓</td><td>สุวรรณสามชาดก (พระสุวรรณสาม)</td><td>เมตตาบารมี</td></tr>
+          <tr><td>๔</td><td>เนมิราชชาดก (พระเนมิราช)</td><td>อธิษฐานบารมี</td></tr>
+          <tr><td>๕</td><td>มโหสถชาดก (พระมโหสถ)</td><td>ปัญญาบารมี</td></tr>
+          <tr><td>๖</td><td>ภูริทัตชาดก (พระภูริทัต)</td><td>ศีลบารมี</td></tr>
+          <tr><td>๗</td><td>จันทชาดก (พระจันทกุมาร)</td><td>ขันติบารมี</td></tr>
+          <tr><td>๘</td><td>นารทชาดก (พระนารทะ)</td><td>อุเบกขาบารมี</td></tr>
+          <tr><td>๙</td><td>วิธุรชาดก (พระวิธูร)</td><td>สัจจบารมี</td></tr>
+          <tr><td>๑๐</td><td>เวสสันดรชาดก (พระเวสสันดร)</td><td>ทานบารมี</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- แหล่งอ้างอิง -->
+    <section class="sources">
+      <h2>แหล่งอ้างอิง</h2>
+      <ul>
+        <li><a href="https://84000.org/tipitaka/dic/d_item.php?i=325">พจนานุกรมพุทธศาสตร์ พ.ศ. ๒๕๖๔ — บารมี 10</a></li>
+        <li><a href="https://kalyanamitra.org/th/article_detail.php?i=20921">แบบเรียนพระไตรปิฎกศึกษา ชั้นโท — สรุปภาพรวมบารมี ๑๐ ทัศ</a></li>
+        <li><a href="https://www.accesstoinsight.org/lib/study/perfections.html">The Ten Perfections: A Study Guide — Access to Insight</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/P%C4%81ramit%C4%81">Pāramitā — Wikipedia</a></li>
+        <li><a href="https://bodhimonastery.org/a-study-of-the-paramis.html">A Study of the Pāramīs — Bodhi Monastery</a></li>
+        <li><a href="https://studybuddhism.com/en/advanced-studies/abhidharma-tenet-systems/comparison-of-buddhist-traditions/the-ten-perfections-in-theravada-mahayana-and-bon">The Ten Perfections in Theravada, Mahayana and Bon — Study Buddhism</a></li>
+        <li>จริยาปิฎก (Cariyāpiṭaka) — พระไตรปิฎก</li>
+        <li>อังคุตตรนิกาย 11.16 — อานิสงส์เมตตา</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      เขียนโดย <a href="https://github.com/xToriMicz">Thaan Oracle (ทาน)</a> — Oracle of Generosity<br>
+      Built with &#10084; by 12 Oracles working together
+    </div>
+  </footer>
+
+</body>
+</html>
