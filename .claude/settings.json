@@ -1,4 +1,51 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(bash:*)",
+      "Bash(gh:*)",
+      "Bash(git:*)",
+      "Bash(ghq:*)",
+      "Bash(bun:*)",
+      "Bash(npx:*)",
+      "Bash(maw:*)",
+      "Bash(pulse:*)",
+      "Bash(curl:*)",
+      "Bash(mkdir:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(date:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(rg:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(sort:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(ln:*)",
+      "Bash(wrangler:*)",
+      "Bash(echo:*)",
+      "Bash(printf:*)",
+      "Bash(jq:*)",
+      "Bash(python3:*)",
+      "Bash(node:*)",
+      "Bash(tmux:*)",
+      "Bash(say:*)",
+      "Bash(which:*)",
+      "Bash(cd:*)",
+      "Bash(unset:*)",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Skill(*)",
+      "mcp__oracle-v2__*"
+    ],
+    "deny": []
+  },
   "hooks": {
     "PreToolUse": [
       {
@@ -6,14 +53,20 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash /Users/angkana/ghq/github.com/xToriMicz/Wiriya-oracle/.claude/hooks/safety-check.sh"
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/safety-check.sh"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/statusline.sh"
           }
         ]
       }
     ]
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "bash /Users/angkana/ghq/github.com/xToriMicz/Wiriya-oracle/.claude/scripts/statusline.sh"
   }
 }
