@@ -24,7 +24,7 @@
 #
 # Updated: 2026-01-14
 
-ROOT="${CLAUDE_PROJECT_DIR:-/Users/nat/Code/github.com/laris-co/Nat-s-Agents}"
+ROOT="${CLAUDE_PROJECT_DIR:-$(pwd)}"
 FILE="$ROOT/ψ/active/statusline.json"
 
 [ ! -f "$FILE" ] && exit 0

@@ -2,7 +2,7 @@
 # Show latest handoff - checks handoff.log for recent entries
 # Only shows if there are entries from today/yesterday
 
-ROOT="${CLAUDE_PROJECT_DIR:-/Users/nat/Code/github.com/laris-co/Nat-s-Agents}"
+ROOT="${CLAUDE_PROJECT_DIR:-$(pwd)}"
 HANDOFF_LOG="$ROOT/ψ/inbox/handoff.log"
 
 [ ! -f "$HANDOFF_LOG" ] && exit 0

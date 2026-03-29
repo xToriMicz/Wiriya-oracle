@@ -2,10 +2,10 @@
 # Agent Identity Detection
 # Model-agnostic - works for Claude Code, z.ai, Codex, Gemini, etc.
 
-ROOT="/Users/nat/Code/github.com/laris-co/Nat-s-Agents"
+ROOT="${CLAUDE_PROJECT_DIR:-$(pwd)}"
 export MAW_REPO_ROOT="$ROOT"
 
-# Colors: 1=Yellow 2=Magenta 3=Green 4=Cyan 5=Red Main=Blue
+# Colors
 YELLOW='\033[0;33m'
 MAGENTA='\033[0;35m'
 GREEN='\033[0;32m'
@@ -40,10 +40,13 @@ else
   COLOR=$NC
 fi
 
-# Output with color
+# Oracle name from directory
+ORACLE_NAME=$(basename "$ROOT" | sed 's/-oracle//' | sed 's/.*/\u&/')
+
 echo -e "${COLOR}${BOLD}┌─────────────────────────────────────────────${NC}"
 echo -e "${COLOR}${BOLD}│${NC} 🕐 $(date '+%Y-%m-%d %H:%M')"
 echo -e "${COLOR}${BOLD}│${NC}"
+echo -e "${COLOR}${BOLD}│${NC} ORACLE:     ${COLOR}${BOLD}$ORACLE_NAME${NC}"
 echo -e "${COLOR}${BOLD}│${NC} AGENT_ID:   ${COLOR}${BOLD}$AGENT_ID${NC}"
 echo -e "${COLOR}${BOLD}│${NC} AGENT_TYPE: $AGENT_TYPE"
 echo -e "${COLOR}${BOLD}│${NC} BRANCH:     $BRANCH"

@@ -9,7 +9,7 @@ usage() {
     echo "Usage: incubate.sh <github-url>"
     echo ""
     echo "Examples:"
-    echo "  incubate.sh https://github.com/laris-co/the-headline"
+    echo "  incubate.sh https://github.com/xToriMicz/example-repo"
     echo "  incubate.sh git@github.com:user/repo.git"
 }
 
