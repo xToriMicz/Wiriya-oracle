@@ -74,20 +74,20 @@ Many forms, one formless truth. The family is connected by understanding.
 3. **ก่อนเริ่มงานใหม่ ถามทีมก่อน** → `/talk-to <oracle> "มีใครรู้ context เรื่อง X ไหม"`
 4. If stuck or need info from another Oracle → use `/talk-to <oracle> "question"`
 5. If you can't complete the task alone (e.g. deploy, review) → `/talk-to` หรือ `pulse add` ส่งต่อทันที **ห้ามทิ้งงาน**
-6. If you discover new work needed → `/talk-to 072 "พบงานใหม่: <summary>"` ให้ 072 สร้างงาน
+6. If you discover new work needed → `/talk-to jingjing "พบงานใหม่: <summary>"` ให้ Jingjing สร้างงาน
 7. Commit work regularly with descriptive messages
 8. Create PR when feature is complete — NEVER merge, let human approve
 
 ### When Done
-1. **Oracle ห้ามปิด Issue เอง** — 072 เป็นคนปิด Issue คนเดียวทุกครั้ง
+1. **Oracle ห้ามปิด Issue เอง** — Jingjing เป็นคนปิด Issue คนเดียวทุกครั้ง
 2. **Comment สรุปภาษาไทยขึ้น Issue** (โทริเอาไปตอบลูกค้าได้เลย) ต้องมีครบ:
    - ปัญหาคืออะไร
    - แก้ไขอะไรบ้าง (commit/PR)
    - ผลลัพธ์เป็นยังไง
    - ห้ามปิด Issue โดยไม่มี summary เด็ดขาด
-3. `/talk-to 072 "งาน #XX เสร็จแล้ว พร้อม Hard QA"` — แจ้ง 072 ตรวจ
-4. รอ 072 Hard QA → deploy → สรุป → close Issue
-5. ถ้าทำส่วนของตัวเองเสร็จแต่ยังต้องการ Oracle อื่นช่วย → `/talk-to 072 "ต่อยอด: <summary>"` ให้ 072 จัดการส่งต่อ
+3. `/talk-to jingjing "งาน #XX เสร็จแล้ว พร้อม Hard QA"` — แจ้ง Jingjing ตรวจ
+4. รอ Jingjing Hard QA → deploy → สรุป → close Issue
+5. ถ้าทำส่วนของตัวเองเสร็จแต่ยังต้องการ Oracle อื่นช่วย → `/talk-to jingjing "ต่อยอด: <summary>"` ให้ Jingjing จัดการส่งต่อ
 6. Check `pulse board` for next assigned task
 7. If more tasks → start next one
 8. If no more tasks → run `/rrr` for retrospective
@@ -137,6 +137,16 @@ Many forms, one formless truth. The family is connected by understanding.
 - อ่าน 3-5 learnings สำคัญ → จำไว้ใช้ระหว่าง session
 - เจอ pattern ที่เคย learn → **ใช้เลย** ไม่ต้องค้นหาใหม่
 
+### 21. ทำงานเหมือนมนุษย์ — Screenshot + Inspect เฉพาะจุด
+- ❌ ห้าม WebFetch ดึง HTML ทั้งหน้าเพื่อหาจุดแก้ — เสีย context เสียเวลา
+- ❌ ห้ามอ่าน codebase ทั้งหมดทุกรอบ — มนุษย์ไม่ทำแบบนั้น
+- ✅ Screenshot → เห็นปัญหา → inspect element → แก้เฉพาะจุด = เร็ว
+- ✅ ใช้ `curl -s -o /dev/null -w "%{http_code}"` เช็ค status แทน WebFetch
+- ✅ จำ codebase ที่ทำบ่อย — รู้ว่าไฟล์ไหนอยู่ตรงไหน function ไหนทำอะไร
+- ✅ ยิ่งแก้งานเดิมบ่อย ต้องยิ่งเก่งขึ้น — ไม่ใช่ทำเหมือนครั้งแรกทุกรอบ
+- Repo ที่ทำบ่อย: ใช้ learnings + memory จำ structure ไม่ต้อง explore ใหม่
+- สั่งงานคนอื่น: บอกไฟล์ไหน บรรทัดไหน ไม่ใช่ให้ไป "ศึกษา codebase ก่อน"
+
 ### Context Management
 | Level | Action |
 |-------|--------|
@@ -171,7 +181,7 @@ Many forms, one formless truth. The family is connected by understanding.
 - `/recap` — Session orientation
 - `/feel` — Log emotions
 
-## Self-QA Checklist (ต้องผ่านทุกข้อก่อนส่ง 072 Hard QA)
+## Self-QA Checklist (ต้องผ่านทุกข้อก่อนส่ง Jingjing Hard QA)
 
 ### Code
 - [ ] Build/syntax ผ่าน ไม่มี error
@@ -207,20 +217,20 @@ Many forms, one formless truth. The family is connected by understanding.
 เมื่อทำงานจากคำสั่งใน Oracle thread หรือ maw hey เสร็จแล้ว **ต้องทำ 2 อย่างทันที**:
 
 1. **ตอบกลับใน Oracle thread** — ใช้ `/talk-to #<thread-id> "สรุปผลงาน"` (ห้ามใช้ `arra_thread` ตรงๆ เพราะไม่มี notification)
-2. **`/inbox write <topic>`** — สร้าง MD local + `arra_handoff()` sync vault อัตโนมัติ (072 เห็นจาก `arra_inbox()`)
+2. **`/inbox write <topic>`** — สร้าง MD local + `arra_handoff()` sync vault อัตโนมัติ (Jingjing เห็นจาก `arra_inbox()`)
 3. **`maw done`** — แจ้ง bridge
 
-**ห้ามทำงานเสร็จแล้วเงียบ** — 072 ดูจาก `arra_inbox()` เห็นของทุก Oracle ทันที
+**ห้ามทำงานเสร็จแล้วเงียบ** — Jingjing ดูจาก `arra_inbox()` เห็นของทุก Oracle ทันที
 
 ### Flow ใหม่ (2026-03-25)
 
 ```
-xxTori dump ปัญหา → 072 สร้าง Issue + จ่ายงาน
+xxTori dump ปัญหา → Jingjing สร้าง Issue + จ่ายงาน
 → Oracle ทำ + Self-QA (checklist ด้านบน) + คุยใน thread
-→ ส่งกลับ 072 → 072 Hard QA + Deploy + สรุป → close
+→ ส่งกลับ Jingjing → Jingjing Hard QA + Deploy + สรุป → close
 ```
 
-**รายงาน 072 เมื่อ DONE หรือ BLOCKED เท่านั้น**
+**รายงาน Jingjing เมื่อ DONE หรือ BLOCKED เท่านั้น**
 - ทำจนเสร็จ → แจ้งตอนพร้อมส่ง Hard QA หรือ blocked
 - ห้ามรายงานทุกขั้นตอน
 
