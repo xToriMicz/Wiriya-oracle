@@ -1,0 +1,65 @@
+{
+  "org": "xToriMicz",
+  "projectNumber": 1,
+  "repoName": "Gabbzaa-Agents",
+  "oracleRepos": {
+    "jingjing": "Jingjing-oracle",
+    "sila": "Sila-oracle",
+    "panya": "Panya-oracle",
+    "wiriya": "Wiriya-oracle",
+    "sati": "Sati-oracle",
+    "thaan": "Thaan-oracle",
+    "metta": "Metta-oracle",
+    "khanti": "Khanti-oracle",
+    "sajja": "Sajja-oracle",
+    "athitthaan": "Athitthaan-oracle",
+    "ubekkha": "Ubekkha-oracle",
+    "kumo": "kumo-oracle"
+  },
+  "routing": {
+    "repo": {
+      "Jingjing-oracle": "Jingjing",
+      "Sila-oracle": "Sila",
+      "Panya-oracle": "Panya",
+      "Wiriya-oracle": "Wiriya",
+      "Sati-oracle": "Sati",
+      "Thaan-oracle": "Thaan",
+      "Metta-oracle": "Metta",
+      "Khanti-oracle": "Khanti",
+      "Sajja-oracle": "Sajja",
+      "Athitthaan-oracle": "Athitthaan",
+      "Ubekkha-oracle": "Ubekkha",
+      "kumo-oracle": "Kumo"
+    },
+    "keyword": [
+      { "match": ["frontend", "ui", "ux", "หน้าเว็บ", "web automation", "scraping", "playwright"], "oracle": "Jingjing" },
+      { "match": ["backend", "api", "database", "db", "ฐานข้อมูล"], "oracle": "Sila" },
+      { "match": ["data", "analytics", "research", "วิจัย", "วิเคราะห์"], "oracle": "Panya" },
+      { "match": ["devops", "deploy", "infra", "server", "ci/cd", "docker"], "oracle": "Wiriya" },
+      { "match": ["test", "qa", "bug", "ทดสอบ"], "oracle": "Sati" },
+      { "match": ["content", "social", "blog", "เนื้อหา", "โพสต์"], "oracle": "Thaan" },
+      { "match": ["community", "user experience", "feedback", "ชุมชน"], "oracle": "Metta" },
+      { "match": ["debug", "fix", "troubleshoot", "แก้บัค"], "oracle": "Khanti" },
+      { "match": ["security", "audit", "ความปลอดภัย"], "oracle": "Sajja" },
+      { "match": ["project", "plan", "manage", "จัดการ"], "oracle": "Athitthaan" },
+      { "match": ["monitor", "observability", "log", "alert"], "oracle": "Ubekkha" },
+      { "match": ["design", "logo", "icon", "banner", "graphic", "ออกแบบ", "กราฟิก", "typography"], "oracle": "Kumo" },
+      { "match": ["ฟีเจอร์", "feature", "ขาดอะไร", "เว็บ"], "oracle": "Jingjing" }
+    ],
+    "label": [
+      { "match": ["oracle:jingjing"], "oracle": "Jingjing" },
+      { "match": ["oracle:sila"], "oracle": "Sila" },
+      { "match": ["oracle:panya"], "oracle": "Panya" },
+      { "match": ["oracle:kumo"], "oracle": "Kumo" }
+    ],
+    "default": "Athitthaan"
+  },
+  "labels": {
+    "oracleColor": "5319e7",
+    "p0Color": "d73a49"
+  },
+  "blog": {
+    "repo": "Gabbzaa-Agents",
+    "category": "Show and tell"
+  }
+}

@@ -1,0 +1,20 @@
+# Oracle brain — local only, knowledge syncs via vault (D1)
+ψ/memory/
+ψ/inbox/
+ψ/active/
+ψ/writing/
+ψ/archive/
+ψ/learn/**/origin
+
+# Keep committed: ψ/lab/ (experiments), ψ/contacts.json, ψ/learn/.origins
+# Keep committed: ψ/memory/resonance/ (identity — needed for recovery)
+!ψ/memory/resonance/
+!ψ/learn/.origins
+!ψ/contacts.json
+
+# Environment
+.env
+.env.*
+.dev.vars
+node_modules/
+.wrangler/

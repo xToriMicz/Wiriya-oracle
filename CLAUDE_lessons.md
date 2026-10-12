@@ -45,7 +45,7 @@
 - **Skipping AI Diary and Honest Feedback** - These sections provide crucial self-reflection
 - **Not checking both settings.json AND plugin hooks** - Causes duplicate behavior
 - **Jumping to workarounds before root cause** - When something fails, investigate WHY before suggesting alternatives. Example: `/plugin install X@marketplace` fails → first check how the plugin system discovers skills, don't immediately try manual clone or different syntax
-- **Direct database queries over MCP/API** - NEVER query SQLite/databases directly. Always use MCP tools (oracle_search, oracle_list) or APIs. Reasons: proper abstraction, consistent access patterns, respects tool boundaries
+- **Direct database queries over MCP/API** - NEVER query SQLite/databases directly. Always use MCP tools (arra_search, arra_list) or APIs. Reasons: proper abstraction, consistent access patterns, respects tool boundaries
 
 ---
 
@@ -55,7 +55,7 @@
 |-------------|--------------|---------|
 | GitHub CSV | `gh api \| duckdb` | Location data, history |
 | Markdown tables | `duckdb` can parse | schedule.md tables |
-| Oracle knowledge | Oracle MCP tools | `oracle_search`, `oracle_list` |
+| Oracle knowledge | Oracle MCP tools | `arra_search`, `arra_list` |
 | SQLite databases | **NEVER direct** | Use MCP/API only |
 
 **Pattern**: `gh api | duckdb` for CSV, Oracle MCP for knowledge, Read tool for markdown

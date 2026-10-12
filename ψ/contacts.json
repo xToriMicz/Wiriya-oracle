@@ -1,0 +1,29 @@
+{
+  "contacts": {
+    "072": {
+      "maw": "072-oracle",
+      "thread": "channel:072-oracle",
+      "inbox": "/Users/angkana/ghq/github.com/xToriMicz/ψ/inbox",
+      "notes": "Conductor — สั่งงาน จ่ายงาน ดูแลภาพรวม"
+    },
+    "jingjing": {
+      "maw": "jingjing-oracle",
+      "thread": "channel:jingjing-oracle",
+      "inbox": "/Users/angkana/ghq/github.com/xToriMicz/Jingjing-oracle/ψ/inbox",
+      "notes": "Fullstack Creator — frontend, backend, deploy"
+    },
+    "kumo": {
+      "maw": "kumo-oracle",
+      "thread": "channel:kumo-oracle",
+      "inbox": "/Users/angkana/ghq/github.com/xToriMicz/kumo-oracle/ψ/inbox",
+      "notes": "Fullstack Creator — design, branding, UI"
+    },
+    "sati": {
+      "maw": "sati-oracle",
+      "thread": "channel:sati-oracle",
+      "inbox": "/Users/angkana/ghq/github.com/xToriMicz/Sati-oracle/ψ/inbox",
+      "notes": "Fullstack Creator — QA, security, testing"
+    }
+  },
+  "updated": "2026-03-24T00:50:00+07:00"
+}

@@ -99,7 +99,7 @@ Short codes trigger `/commands`. Details loaded only when called.
 | 1. Files | `tools/`, `projects/`, `ψ/`, `.claude/` | Active files |
 | 2. Git | All commits, creates, deletes, renames | History + moves |
 | 3. GitHub | Issues, PRs, discussions | Planning context |
-| 4. Repos | `~/Code/github.com/laris-co/*` | Graduated projects |
+| 4. Repos | `~/ghq/github.com/xToriMicz/*` | Graduated projects |
 | 5. Memory | `ψ/memory/retrospectives/`, `learnings/` | Decisions made |
 
 #### Output Format
@@ -110,7 +110,7 @@ Short codes trigger `/commands`. Details loaded only when called.
 ### 📊 Quick Summary
 ┌─────────────────────────────────────────────────────────┐
 │  Status: 🟢 ACTIVE                                       │
-│  Location: ~/Code/github.com/laris-co/the-headline      │
+│  Location: ~/ghq/github.com/xToriMicz/[project]      │
 │  Last Activity: 2025-12-09 by nat                        │
 │  Confidence: 95% (5/5 agents agree)                      │
 └─────────────────────────────────────────────────────────┘
@@ -137,10 +137,10 @@ Short codes trigger `/commands`. Details loaded only when called.
 ### 🎓 Graduated (moved to own repo)
 | Project | Repo | Date |
 |---------|------|------|
-| headline | laris-co/the-headline | 2025-12-09 |
-| claude-voice | laris-co/claude-voice-notify | 2025-12-09 |
+| headline | xToriMicz/parami | 2025-12-09 |
+| claude-voice | xToriMicz/[project] | 2025-12-09 |
 
-### 🔬 Incubating (in Nat-s-Agents)
+### 🔬 Incubating (in Oracle repos)
 | Project | Location | Status |
 |---------|----------|--------|
 | maw-tools | tools/maw | Active |

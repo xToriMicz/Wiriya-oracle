@@ -1,59 +1,60 @@
 {
   "permissions": {
     "allow": [
-      "Bash(bash:*)",
-      "Bash(gh:*)",
-      "Bash(git:*)",
-      "Bash(ghq:*)",
-      "Bash(bun:*)",
-      "Bash(npx:*)",
-      "Bash(maw:*)",
-      "Bash(pulse:*)",
-      "Bash(curl:*)",
-      "Bash(mkdir:*)",
-      "Bash(ls:*)",
-      "Bash(cat:*)",
-      "Bash(date:*)",
-      "Bash(wc:*)",
-      "Bash(find:*)",
-      "Bash(rg:*)",
-      "Bash(head:*)",
-      "Bash(tail:*)",
-      "Bash(sort:*)",
-      "Bash(cp:*)",
-      "Bash(mv:*)",
-      "Bash(ln:*)",
-      "Bash(wrangler:*)",
-      "Bash(echo:*)",
-      "Bash(printf:*)",
-      "Bash(jq:*)",
-      "Bash(python3:*)",
-      "Bash(node:*)",
-      "Bash(tmux:*)",
-      "Bash(say:*)",
-      "Bash(which:*)",
-      "Bash(cd:*)",
-      "Bash(unset:*)",
-      "Read",
-      "Write",
-      "Edit",
-      "Glob",
-      "Grep",
-      "WebFetch",
-      "WebSearch",
-      "Skill(*)",
-      "mcp__oracle-v2__*"
+      "Bash(bash:*)", "Bash(gh:*)", "Bash(git:*)", "Bash(maw:*)", "Bash(pulse:*)",
+      "Bash(npx:*)", "Bash(bun:*)", "Bash(curl:*)", "Bash(mkdir:*)", "Bash(ls:*)",
+      "Bash(cd:*)", "Bash(cat:*)", "Bash(grep:*)", "Bash(find:*)", "Bash(rm:*)",
+      "Bash(cp:*)", "Bash(mv:*)", "Bash(echo:*)", "Bash(touch:*)", "Bash(chmod:*)",
+      "Bash(node:*)", "Bash(python:*)", "Bash(which:*)", "Bash(head:*)", "Bash(tail:*)",
+      "Bash(wc:*)", "Bash(sort:*)", "Bash(uniq:*)", "Bash(sed:*)", "Bash(awk:*)",
+      "Bash(xargs:*)", "Bash(tar:*)", "Bash(zip:*)", "Bash(unzip:*)",
+      "Bash(hostname:*)", "Bash(date:*)", "Bash(jq:*)", "Bash(oracle-skills:*)",
+      "Bash(tmux:*)", "Bash(ssh:*)", "Bash(scp:*)", "Bash(rsync:*)",
+      "Bash(*)",
+      "Read", "Write", "Edit", "Glob", "Grep",
+      "WebFetch(*)", "WebSearch(*)",
+      "Skill(*)", "mcp__arra-oracle-v3__*", "mcp__*"
     ],
-    "deny": []
+    "deny": [],
+    "ask": []
   },
   "hooks": {
-    "PreToolUse": [
+    "SessionStart": [
       {
-        "matcher": "Bash",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/safety-check.sh"
+            "command": "/Users/angkana/.local/bin/edge-tts --voice th-TH-PremwadeeNeural --text 'สวัสดีค่ะ วิริยะพร้อมทำงานแล้ว' --write-media /tmp/Wiriya-tts.mp3 && afplay /tmp/Wiriya-tts.mp3 &"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/agent-identity.sh"
+          },
+          {
+            "type": "command",
+            "command": "tmux rename-window WIRIYA 2>/dev/null; wezterm cli set-tab-title --pane-id $(wezterm cli list --format json | python3 -c \"import sys,json; panes=json.load(sys.stdin); print(next(p['pane_id'] for p in panes if p.get('is_active')))\") '⚡ 05-Wiriya-Oracle' 2>/dev/null || true"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/show-latest-handoff.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/feed-log.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'stop hook — maw done handles TTS via bridge'"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/feed-log.sh"
           }
         ]
       }
@@ -64,9 +65,99 @@
           {
             "type": "command",
             "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/statusline.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/jump-detect.sh \"$CLAUDE_USER_PROMPT\""
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/feed-log.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/safety-check.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/token-check.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/feed-log.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log-task-start.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/token-check.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/token-check.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/token-check.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/feed-log.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log-task-end.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/token-check.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/token-check.sh"
           }
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/statusline.sh"
   }
 }

@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "arra-oracle-v3": {
+      "command": "/Users/angkana/.bun/bin/bun",
+      "args": ["run", "/Users/angkana/.local/share/arra-oracle-v3/src/index.ts"],
+      "env": {
+        "ORACLE_DB_PATH": "/Users/angkana/.oracle-v2/oracle.db",
+        "ORACLE_CHROMA_TIMEOUT": "1000",
+        "ORACLE_HTTP_URL": "http://localhost:47778"
+      }
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    }
+  }
+}
